@@ -1,4 +1,5 @@
 <?php require("actions/signupAction.php"); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php include "includes/head.php" ?>
@@ -9,8 +10,8 @@
             <?php if(isset($errorMsg)) {echo "<p>" . $errorMsg . "</p>";}?>
 
             <div class="mb-3">
-                <label for="pseudo" class="form-label">Pseudo</label>
-                <input type="text" class="form-control" name="pseudo">
+                <label for="username" class="form-label">Pseudo</label>
+                <input type="text" class="form-control" name="username">
             </div>
             <div class="mb-3">
                 <label for="lastname" class="form-label">Nom</label>
@@ -25,7 +26,10 @@
                 <input type="password" class="form-control" name="password">
             </div>
             <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+            <br><br>
+            <a href="login.php"><p>J'ai déjà un compte, je me connecte</p></a>
         </form>
+        
     </body>
 </html>
 
