@@ -1,4 +1,9 @@
-<?php require("actions/loginAction.php"); ?>
+<?php 
+
+    require("actions/users/loginAction.php"); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,6 +14,7 @@
         <form class="container" method="POST">
 
             <?php if(isset($errorMsg)) {echo "<p>" . $errorMsg . "</p>";}?>
+            <?php if(isset($_SESSION["auth"])) {echo "<p>" . $_SESSION["auth"] . "</p>";}?>
 
             <div class="mb-3">
                 <label for="username" class="form-label">Pseudo</label>

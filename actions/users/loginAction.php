@@ -1,6 +1,8 @@
 <?php 
-
-require("actions/database.php");
+    // if(!isset($_SESSION)) {
+    //     session_start();
+    // }
+    require("actions/database.php");
 
 // Form validation
 if(isset($_POST["validate"])) {
@@ -30,8 +32,7 @@ if(isset($_POST["validate"])) {
                 $_SESSION["lastname"] = $userInfos["lastname"];
                 $_SESSION["firstname"] = $userInfos["firstname"];
 
-                //
-                header("Location : ../index.php");
+                header("Location: index.php");
 
             } else {
                 $errorMsg = "Votre mot de passe est incorrect !";

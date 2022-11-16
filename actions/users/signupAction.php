@@ -1,6 +1,8 @@
 <?php
-
-require("actions/database.php");
+    // if(!isset($_SESSION)) {
+    //     session_start();
+    // }
+    require("actions/database.php");
 
 // Form validation
 if(isset($_POST["validate"])) {
@@ -24,11 +26,20 @@ if(isset($_POST["validate"])) {
         if($checkIfUserAlreadyExists->rowCount() == 0) {
             // ... the inputs values are stored in the db...
             $registerUser = $db->prepare("INSERT INTO users (username, lastname, firstname, pw)VALUES(?, ?, ?, ?)");
-            $registerUser->execute(array($username, $user_lastname, $user_firstname, $user_password));
+            $registerUser->execute(array(
+                $username, 
+                $user_lastname, 
+                $user_firstname, 
+                $user_password
+            ));
 
             // ... then we get these infos from the db...
             $getUserInfos = $db->prepare("SELECT id, username, lastname, firstname FROM users WHERE lastname = ? AND firstname= ?");
-            $getUserInfos->execute(array($user_lastname, $user_firstname));
+            $getUserInfos->execute(
+                array(
+                    $user_lastname, 
+                    $user_firstname
+                ));
 
             // ... we store the infos...
             $userInfos = $getUserInfos->fetch();
