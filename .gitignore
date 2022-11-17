@@ -1,6 +1,3 @@
 actions/questions/deleteQuestionAction.php
 actions/questions/getAllQuestionsAction.php
-actions/questions/editQuestionAction.php
-actions/questions/getQuestionToEditAction.php
-edit-question.php
 actions/database.php
