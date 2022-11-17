@@ -6,7 +6,8 @@ if(isset($_POST["validate"])) {
     if(!empty($_POST["title"]) AND !empty($_POST["content"])) {
 
         $question_title = htmlspecialchars($_POST["title"]);
-        // The nl2br method transforms [saut de lignes] to <br>
+        // The nl2br method transforms line breaks into <br> tags,
+        // to make things work in the db.
         $question_content = nl2br(htmlspecialchars($_POST["content"]));
         $question_date = date("d/m/Y");
         $question_author_id = $_SESSION["id"];

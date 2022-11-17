@@ -1,7 +1,6 @@
 <?php 
-    // if(!isset($_SESSION)) {
-    //     session_start();
-    // }
+    session_start();
+    
     require("actions/database.php");
 
 // Form validation

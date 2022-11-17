@@ -1,6 +1,7 @@
 <?php 
+    require("actions/users/securityAction.php");
     require("actions/questions/publishQuestionAction.php");
-    require("actions/users/securityAction.php"); 
+     
 ?> 
 
 <!DOCTYPE html>
@@ -21,11 +22,11 @@
                 ?>
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Titre</label><br>
+                    <label for="title" class="form-label fw-bold">Titre</label><br>
                     <input type="text" class="form-control" name="title">
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label">Contenu</label> <br>
+                    <label for="content" class="form-label fw-bold">Contenu</label> <br>
                     <textarea type="text" class="form-control" name="content"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" name="validate">Envoyer</button>

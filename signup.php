@@ -1,4 +1,6 @@
-<?php require("actions/users/signupAction.php"); ?>
+<?php 
+    require("actions/users/signupAction.php"); 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">

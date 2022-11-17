@@ -1,7 +1,5 @@
 <?php 
-
     require("actions/users/loginAction.php"); 
-
 ?>
 
 <!DOCTYPE html>
