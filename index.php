@@ -35,7 +35,9 @@
                     <br><br>
                     <div class="card">
                         <div class="card-header fw-bold">
-                            <?= $question["title"]?>
+                            <a href="get-one-question.php?id=<?=$question["id"]?>">
+                                <?= $question["title"]?>
+                            </a>
                         </div>
                         <div class="card-body">
                         <?= $question["content"]?>

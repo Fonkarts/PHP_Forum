@@ -34,5 +34,3 @@
         
     </body>
 </html>
-
-<!-- REPRENDRE à 41:40 !!! -->

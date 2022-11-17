@@ -25,9 +25,15 @@
                             <p class="card-text">
                                 <?= $question["content"] ?>
                             </p>
-                            <a href="#" class="btn btn-primary">Accéder à la question</a>
-                            <a href="edit-question.php?id=<?= $question["id"]?>" class="btn btn-warning">Modifier la question</a>
-                            <a href="actions/questions/deleteQuestionAction.php?id=<?= $question["id"]?>" class="btn btn-danger">Supprimer la question</a>
+                            <a href="get-one-question.php?id=<?=$question["id"]?>" class="btn btn-primary">
+                                Accéder à la question
+                            </a>
+                            <a href="edit-question.php?id=<?= $question["id"]?>" class="btn btn-warning">
+                                Modifier la question
+                            </a>
+                            <a href="actions/questions/deleteQuestionAction.php?id=<?= $question["id"]?>" class="btn btn-danger">
+                                Supprimer la question
+                            </a>
                         </div>
                         <h5 class="card-footer">
                             <?= "Publié par " . $question["author"] . 
