@@ -1,6 +1,6 @@
 <?php
     require("actions/users/securityAction.php");
-    require("actions/questions/myQuestionsAction.php") ;
+    require("actions/questions/getAllQuestionsFromUser.php") ;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,7 +14,7 @@
 
             <?php 
             
-                while($question = $getAllMyQuestions->fetch()) {
+                while($question = $getAllQuestionsFromUser->fetch()) {
                     ?> 
                     <br><br>
                     <div class="card">

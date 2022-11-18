@@ -12,7 +12,6 @@
         <form class="container" method="POST">
 
             <?php if(isset($errorMsg)) {echo "<p>" . $errorMsg . "</p>";}?>
-            <?php if(isset($_SESSION["auth"])) {echo "<p>" . $_SESSION["auth"] . "</p>";}?>
 
             <div class="mb-3">
                 <label for="username" class="form-label">Pseudo</label>

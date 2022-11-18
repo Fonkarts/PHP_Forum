@@ -14,9 +14,9 @@
           <a class="nav-link active text-light" aria-current="page" href="index.php">Accueil</a>
         </li>
 
-        <!-- <li class="nav-item text-light">
-          <a class="nav-link text-light" href="#">Profil</a>
-        </li> -->
+        <li class="nav-item text-light">
+          <a class="nav-link text-light" href="user-profile.php">Profil</a>
+        </li>
 
         <li class="nav-item text-light">
           <a class="nav-link text-light" href="my-questions.php">Mes questions</a>
