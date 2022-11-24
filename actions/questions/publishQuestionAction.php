@@ -3,8 +3,10 @@
 require("actions/database.php");
 
 if(isset($_POST["validate"])) {
+    // If the fields are not empty...
     if(!empty($_POST["title"]) AND !empty($_POST["content"])) {
 
+        // We store the question infos in variables
         $question_title = htmlspecialchars($_POST["title"]);
         // The nl2br method transforms line breaks into <br> tags,
         // to make things work in the db.
@@ -13,9 +15,11 @@ if(isset($_POST["validate"])) {
         $question_author_id = $_SESSION["id"];
         $question_author = $_SESSION["username"];
 
+        // We prepare and execute the request...
         $insertNewQuestion = $db->prepare("INSERT INTO questions(title, content, author_id, author, publishing_date) VALUES(?, ?, ?, ?, ?)");
         $insertNewQuestion->execute(
             array(
+                // ... with the infos that we store earlier
                 $question_title, 
                 $question_content, 
                 $question_author_id, 

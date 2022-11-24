@@ -15,7 +15,7 @@
     <?php 
     if(isset($errorMsg)) {echo $errorMsg;}
     ?>
-    <section class="user-profile-infos container justify-content-center">
+    <section class="user-profile-infos container">
         <br><br>
         <?php 
         if(isset($user_firstname)) {
@@ -40,34 +40,41 @@
     </section>
 
     <section class="user-questions container justify-content-center">
+        <h2>Mes questions</h2>
         <?php 
-        while($question = $getAllQuestionsFromUser->fetch()) {
-            ?> 
-            <br>
-            <div class="card">
-                <h5 class="card-header fw-bold">
-                    <?= $question["title"] ?>
-                </h5>
-                <div class="card-body">
-                    <p class="card-text">
-                        <?= $question["content"] ?>
-                    </p>
-                    <a href="get-one-question.php?id=<?=$question["id"]?>" class="btn btn-primary">
-                        Accéder à la question
-                    </a>
-                    <a href="edit-question.php?id=<?= $question["id"]?>" class="btn btn-warning">
-                        Modifier la question
-                    </a>
-                    <a href="actions/questions/deleteQuestionAction.php?id=<?= $question["id"]?>" class="btn btn-danger">
-                        Supprimer la question
-                    </a>
+        if($getAllQuestionsFromUser->rowCount() > 0) {
+            while($question = $getAllQuestionsFromUser->fetch()) {
+                ?> 
+                <br>
+                <div class="card">
+                    <h5 class="card-header question-title">
+                        <?= $question["title"] ?>
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <?= $question["content"] ?>
+                        </p>
+                        <a href="get-one-question.php?id=<?=$question["id"]?>" class="btn read-button">
+                            Voir
+                        </a>
+                        <a href="edit-question.php?id=<?= $question["id"]?>" class="btn edit-button">
+                            Modifier
+                        </a>
+                        <a href="actions/questions/deleteQuestionAction.php?id=<?= $question["id"]?>" class="btn delete-button">
+                            Supprimer
+                        </a>
+                    </div>
+                    <h5 class="card-footer question-footer">
+                        <?= "Publié par " . $question["author"] . 
+                        ", le " . $question["publishing_date"] . "." ?>
+                    </h5>
                 </div>
-                <h5 class="card-footer">
-                    <?= "Publié par " . $question["author"] . 
-                    ", le " . $question["publishing_date"] . "." ?>
-                </h5>
-            </div>
-            <br>
+                <br>
+                <?php
+            }
+        } else {
+            ?> 
+                <p>Vous n'avez pas encore publié d'article !</p>
             <?php
         }
         ?>

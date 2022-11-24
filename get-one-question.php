@@ -27,13 +27,13 @@
             <br><br>
             <section class="question-content">
                 <div class="card question-card">
-                    <div class="card-header fw-bold">
+                    <div class="card-header question-title">
                         <?= $question_title?>
                     </div>
                     <div class="card-body">
                         <?= $question_content?>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer question-footer">
                         <?= "Publié par " . $question_author . ", le " . $question_date?>
                     </div>
                 </div>

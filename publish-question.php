@@ -13,7 +13,8 @@
         <?php include "includes/navbar.php"?> 
     <br><br>
             <form class="container" method="POST">
-
+                <!-- If the errorMsg variable is set it will display here -->
+                <!-- And so the successMsg -->
                 <?php if(isset($errorMsg)) {
                     echo "<p>" . $errorMsg . "</p>";
                     } else if (isset($successMsg)) {

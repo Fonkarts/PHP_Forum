@@ -11,18 +11,18 @@
     <body>
         <?php include "includes/navbar.php"?> 
 
-        <div class="container">
-
-            <h1 style="text-align: center;">Index</h1>
+        <section class="container home">
+            <br>
+            <h1 style="text-align: center;">Home sweet Home</h1>
             <br><br>
 
             <form method="GET">
 
-                <div class="form-group row">
-                    <div class="col-8">
-                        <input type="search" name="search" class="from-control">
+                <div class="search-container">
+                    <div class="search-bar-container">
+                        <input type="search" name="search" class="from-control" placeholder="Chercher une question par mots-clés...">
                     </div>
-                    <div class="col-4">
+                    <div class="search-button-container">
                         <button class="btn btn-success">Rechercher</button>
                     </div>
                 </div>
@@ -32,26 +32,24 @@
             
                 while($question = $getAllQuestions->fetch()) {
                     ?> 
-                    <br><br>
-                    <div class="card">
-                        <div class="card-header fw-bold">
-                            <a href="get-one-question.php?id=<?=$question["id"]?>">
+                    <div class="card question-card">
+                        <div class="card-header">
+                            <a class="question-title" href="get-one-question.php?id=<?=$question["id"]?>">
                                 <?= $question["title"]?>
                             </a>
                         </div>
                         <div class="card-body">
                         <?= $question["content"]?>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer question-footer">
                             <?= "Publié par " . $question["author"] . ", le " . $question["publishing_date"]?>
                         </div>
                     </div>
-                    <br><br>
                     <?php
                 }
             
             ?>
-        </div>
+        </section>
     </body>
 </html>
 

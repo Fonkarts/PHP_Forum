@@ -19,14 +19,11 @@
         </li>
 
         <li class="nav-item text-light">
-          <a class="nav-link text-light" href="my-questions.php">Mes questions</a>
-        </li>
-
-        <li class="nav-item text-light">
           <a class="nav-link text-light" href="publish-question.php">Publier une question</a>
         </li>
         
         <?php 
+          // The log out button will only display if the user is logged in
           if(isset($_SESSION['auth'])) {
             ?>
               <li class="nav-item text-light">

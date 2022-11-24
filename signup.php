@@ -27,9 +27,10 @@
                 <label for="password" class="form-label">Mot de Passe</label>
                 <input type="password" class="form-control" name="password">
             </div>
-            <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+            <button type="submit" class="btn" name="validate">S'inscrire</button>
             <br><br>
-            <a href="login.php"><p>J'ai déjà un compte, je me connecte</p></a>
+            <p class="text-light">Vous avez déjà un compte ?</p>
+            <a class="login-link" href="login.php"><p>Connectez-vous !</p></a>
         </form>
         
     </body>
